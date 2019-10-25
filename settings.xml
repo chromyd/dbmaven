@@ -1,19 +1,44 @@
-<settings xmlns="http://maven.apache.org/POM/4.0.0"
-	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0
-                      http://maven.apache.org/xsd/settings-1.0.0.xsd">
-
-	<!-- Required since Maven-3.2, see https://issues.apache.org/jira/browse/MNG-5846 -->
-	<mirrors>
-		<mirror>
-			<id>nexus-default</id>
-			<name>
-				Nexus default repository.
-			</name>
-			<url>
-				http://seujava.noncd.rz.db.de/nexus/content/groups/default
-			</url>
-			<mirrorOf>central</mirrorOf>
-		</mirror>
-	</mirrors>			
+<?xml version="1.0" encoding="UTF-8"?>
+<settings xsi:schemaLocation="http://maven.apache.org/SETTINGS/1.1.0 http://maven.apache.org/xsd/settings-1.1.0.xsd" xmlns="http://maven.apache.org/SETTINGS/1.1.0"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <profiles>
+    <profile>
+      <repositories>
+        <repository>
+          <snapshots>
+            <enabled>false</enabled>
+          </snapshots>
+          <id>central</id>
+          <name>default-maven-3rdparty</name>
+          <url>https://bahnhub.tech.rz.db.de:443/artifactory/default-maven-3rdparty</url>
+        </repository>
+        <repository>
+          <snapshots />
+          <id>snapshots</id>
+          <name>default-maven-3rdparty</name>
+          <url>https://bahnhub.tech.rz.db.de:443/artifactory/default-maven-3rdparty</url>
+        </repository>
+      </repositories>
+      <pluginRepositories>
+        <pluginRepository>
+          <snapshots>
+            <enabled>false</enabled>
+          </snapshots>
+          <id>central</id>
+          <name>default-maven-3rdparty</name>
+          <url>https://bahnhub.tech.rz.db.de:443/artifactory/default-maven-3rdparty</url>
+        </pluginRepository>
+        <pluginRepository>
+          <snapshots />
+          <id>snapshots</id>
+          <name>default-maven-3rdparty</name>
+          <url>https://bahnhub.tech.rz.db.de:443/artifactory/default-maven-3rdparty</url>
+        </pluginRepository>
+      </pluginRepositories>
+      <id>artifactory</id>
+    </profile>
+  </profiles>
+  <activeProfiles>
+    <activeProfile>artifactory</activeProfile>
+  </activeProfiles>
 </settings>

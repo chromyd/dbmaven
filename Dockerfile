@@ -1,3 +1,3 @@
-FROM maven:3.5.2-jdk-9 
+FROM maven:latest
 
 COPY settings.xml /usr/share/maven/conf
